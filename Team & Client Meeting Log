@@ -262,7 +262,7 @@ Invited : Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew S
 Total Meet time  Minutes.
  
 Attended: Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner. 
-          Leidos Team        - Emily Blocker
+          Leidos Team        - James Mccants 
 
 Agenda: 
 -connection to drone and expectation
@@ -275,9 +275,42 @@ Agenda:
 - how indepth on config i.e. where to start turn on computer or what
 - include how to set up phone emulator? or assume android device
 - config guide every release 
-- 
+
 
 Action/To Do Items:
+- we need to confirm if we will have a meeting over Thanksgiving break!!!!! or the following week which is what the initial thought was 
+- talk about REQ document thursday 10/17 in class
+-connect drone
+-config guide
+-user guide
+- videos and demonstrations for Phase 1 release on 10/23
+- TEST PLAN aka using the app with all functionality
 
 Notes:
+- add mccantjd to team gitHub for updates
+- API key
+- config -> using app (unsigned apk) (use APK)
+- config -> emulator set up not neccessary
+- test phone will be s7
+- living document for our config guide
+- make sure to state initials assumptions for config guide
+- acquire 1 more android device perferably 
+- only 1 drone poves some difficulty with dividing up tasks
+- Phase 1 week from 10/16 at 2pm
+- user config should include emergency shut off help
+- retro spective
+- Thursday REQ finalize
+- james only at meeting other 2 were busy
+- Debra demo for Thursday video
+- TEST plan mini version how to use our app and what its functionality includes
+- limit on the z coordinates so we can not fly over maze
+- x and y will also have left and right boundaries
+- dead reckoning this is where we will use that
+- unit test in android will be a write up on how to test app
+     - read test plan and one should be able to perform actions
+     - this will be to use app to all functionality
+- next sprint will be on NOV 6
+- decide thanksgiving break time or if we will meet after 
+- package name SUAsTEAM7.com
+- APK file from computer to phone aka transfer APK to phone 
 
