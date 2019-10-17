@@ -1,0 +1,160 @@
+Weekly Meeting Log
+******************************************************************************************************************************
+This document will serve as notes from each team meeting Studios Umbrella conducts. We have to maintain weekly meetings to 
+be successful within this project and continue making progress to reach our end goal of a functioning system in-line with our 
+requirements document. 
+
+Update this document with the agenda followed for each team meeting along with notes and new team member responsibilities. 
+******************************************************************************************************************************
+
+************************ D/A 09/09/2019 ************************
+
+Agenda:
+
+45 min: Individualy discuss progress and barriers from Req Document 
+15 min: Next steps
+** Most time was spent on UI and page layout.. Req document still needs review upon completion
+
+Notes:
+
+Discussed connection button on 1st page of UI. 
+
+clarification on how mission json file is loaded?
+
+Discussed UI moving to 3 seperate dynamic views. Connect, upload flight plan, main page "camera,stats, etc"
+
+stats - altitude, lat long , battery, orientation. 
+
+Todo - Susan: Finish wiring diagram 
+
+     - Murat: Start UI code implementation
+     
+     - Ryan: Get DJI SDK working on android studio with sample program from DJI website 
+     
+     - Drew: Finish section 2 Req document
+     
+All - review req doc's on Tuesday D/A 09/10/2019
+
+Bring HDMI cable to connect to huddle room big screen.
+
+
+***************************** END ******************************
+
+************************ D/A 09/10/2019 ************************
+
+Agenda:
+
+45 min, review design document
+5 min, SDK DJI version 
+5 min, Lock down thursday client meeting location ie room number 
+5 min, Lock down phone simulator version
+
+Notes:
+
+Make local copies of any online documentation because one-drive is not reliable.
+We need to move to dropbox.
+
+
+
+Todo:
+
+All: Put together individual questions for client meeting thursday.
+
+Ryan - Submit to client/Debra req doc draft and UI wire diagrams, start architecture diagram
+
+Drew - look at code to connect android app to drone.
+
+Susan - git tutorials, connection drone to app
+
+Murat - start dummy program implementing views, create buttons, dummy handlers.
+
+***************************** END ******************************
+
+
+************************ D/A 09/17/2019 ************************
+
+Agenda:
+
+60 min, review design document making changes and error check
+
+
+Notes:
+
+None
+
+We have to be more careful with spelling errors!!
+
+
+Todo:
+
+All: Put together individual questions for client meeting thursday.
+
+Ryan - Re-submit to debra with changes
+
+Drew - look at code to connect android app to drone.
+
+Susan - git tutorials
+
+Murat - Update Trello, sua
+
+***************************** END ******************************
+
+************************ D/A 10/01/2019 ************************
+
+Agenda / Notes:
+
+1. Client meeting agenda
+2. Review architecture diagram 
+3. Start connection to drone stub code
+<<<<<<< master
+4. Refreshed on github
+=======
+4. Refreshed 
+>>>>>>> master
+
+
+Todo:
+
+All: 
+
+Ryan - Import DJI sdk into project 
+Drew - look at code to connect android app to drone.... keep trying buddy
+<<<<<<< master
+Susan - Update Trello
+Murat - Try the drone connection as well
+
+***************************** END ******************************
+
+************************ D/A 10/08/2019 ************************
+
+Agenda / Notes:
+
+1. Technical Requirements document
+- took most of the meeting time
+- What each member contributed
+- Susan: Where part of the document
+- Murat: Pros
+- Ryan: Cons
+- Drew: Tasks
+2. Connect to DJI SDK 
+- Used Drew's phone
+- Connection was a failure
+Todo:
+
+All: 
+Everyone needs to work on getting the drone connection to work
+Whoever gets it first, will be the code that we will use.
+=======
+Susan - Update Trello
+***************************** END ******************************
+
+************************ D/A 10/08/2019 ************************
+
+Agenda / Notes:
+Drone connection again
+Populate agenda for Sprint meeting tomorrow
+Todo:
+Murat will take the drone for testing until Thursday
+Ryan will take the drone from Thursday until Monday
+Drew & Susan will be working on the user and config guide
+Susan - Update Trello

@@ -1,0 +1,283 @@
+****************************** Studious Umbrella / Team Leidos : Weekly Meeting Agenda ******************************
+Agenda Skype Meeting (9/12) 2PM-3PM 
+ 
+Invited : Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner.  
+          Leidos Team        - Emily Blocker, James Mccants, Jon Ellsworth. 
+                
+Total Meet time 40 Minutes.
+ 
+Attended: Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner. 
+          Leidos Team        - Emily Blocker
+ 
+Topics:  
+5 min   - Outline meeting expectations / agenda / buffer for connection issues.   
+25 min - Discuss requirements document draft as a group.  
+10 min - Show wiring diagram mockup of user interface. 
+5 min - Discuss logging on github / forked repo
+10 min - Allow time for Leidos topics of discussion. 
+5 min   - Closing comments / discuss items to be complete by next meeting.  
+
+Questions: 
+
+1. Discuss uploading flight plan to drone. Built into code or file located on phone.
+2. Code drop for release to Johns branch with every release / work in ryans space.
+
+Notes: 
+ 
+1. Notes from skype meeting with Leidos on 09/12/19 •
+2. Talked about UI wireframe stated she is okay with that“simple and into the point “.
+3. Talked about which file were going to use. Only required were start stop etc.
+4. Went above and beyond on wireframe.
+5. UP to us on how to implement on the input of the json file or whichever file is needed.
+6. DJI SDK MOBILE FOR ANDROID•Architecture diagram on progress.
+7. Look through the requirements documents to watch out for grammar.  
+8. Group name spelled wrong.•Which gridle and android version is going to be used. 
+9. Decide and let Emily or Leidos know.
+10. Will the application connect to different drones or one Drone? (upto use to decide) 
+11. (update document stating how many drones it will connect to the application (be specific and put details on it.)
+12. Print document and sign it (James is out on Friday and Monday).
+13. Check out the drone (can be checked out anytime but next Friday)
+14. Talked about events on Trello.
+15. Talked about GitHub and how we plan to push code (different pushes) (peer reviews)
+16. Every sprint to be pushed into James branch.  (have the code in their branchend of the sprint)
+17. Talked about logs on GitHub etc.
+18. Next meet up at Leidos (NA)
+19. Talk and fill the paper for Emily that her boss requires on what we did and how wedid it and how we plan on accomplishing it.
+20. Next week skype meeting (ThursdaySeptember 19that 2-3pm)
+21. Flight plans on first release (hard coding or upload the file)
+
+ 
+Action Items: 
+ 
+1. Figure out which Graddle and Android version were going to be using and let Emily know.
+2. Finish up requirements documents and send it in for Approval (James is out of office next Friday and Monday).
+3. Plan the next sprint.
+4. Fix Skype issues.
+5. Upload the UI code to github.
+6. Architecture Diagram.
+
+
+
+********************************************************************************************************************
+
+****************************** Studious Umbrella / Team Leidos : Weekly Meeting Agenda ******************************
+Agenda Skype Meeting (9/19) 2PM-3PM 
+ 
+Invited : Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner.  
+          Leidos Team        - Emily Blocker, James Mccants, Jon Ellsworth. 
+                
+ 
+Attended: Senior Design Team -  Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner.
+          Leidos Team        -  Emily Blocker
+ 
+Topics:  
+20 min - Architecture Diagram discussion.   
+10 min - Discuss requirements document new revision.  
+10 min - Trello sprint board. 
+30 min - Leidos weekly status slides.
+  
+
+Questions: 
+
+1. On hold until Req document is approved, will be sending new version.
+2. Next working on connection starting monday if req document is approved.
+3. Susan taking over as team lead Wed.
+4. Code for U/I practice on github.
+5. Finish populating backlog.
+6. Confirm Ledios 1200PM Next wed.
+7. Anything you want us to prepare? Powerpoint ? Documents etc..
+8. Pick up the drone at this time.
+
+
+Finished:
+
+1. Implemented practice user inteface code , on github. Dummy buttons that cycle through views.
+
+2. Architecture diagram. 
+
+3. Made req document revisions, still waiting on debra.
+
+
+
+Notes: 
+ 
+1. -Architecture Diagram
+     -understanding of code implementation added to diagram in more deatail
+     - i.e file reader, drone connection process, etc..
+    - Architecture Diagram as is would be better verison of our current wire diagram
+
+2. Req Doc V2
+    - nothing substantially code related until we have apporved REQ Doc and Architecture Doc
+
+* Code Reviews comming on sprint planning
+
+3. For next WED Sep 25 sprint plan 2
+  - Demo: Diagrams and REQ doc
+  
+* course outline to Leidos
+
+ 
+Action Items: 
+ 
+1. Architecture diagram 
+2. sprint planning Wed (9/25)
+3. code review practice, at next sprint planning Wed (9/25)
+4. check out drone next week
+5. for sprint planning (9/25) demon our diagrams and requirments doc
+
+
+
+
+
+
+********************************************************************************************************************
+
+****************************** Studious Umbrella / Team Leidos : Weekly Meeting Agenda ******************************
+Agenda Skype Meeting (9/25) 12PM-1:30PM 
+
+1) Sprint 1 Retro.  
+2) Sprint 2 Planning.
+3) Req document.
+4) User Interface code review.
+5) Leidos agenda items.
+
+Invited : Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner.  
+          Leidos Team        - Emily Blocker, James Mccants, Jon Ellsworth. 
+                
+ 
+Attended : Senior Design Team -  Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner.
+           Leidos Team        -  James Mccants, Jon Ellsworth 
+                                 Emily Blocker absent (was held up in a different meeting)
+
+
+Questions :
+
+1) Improvements for SUAS(7) ? 
+2) 
+
+Notes :
+1) Changed and updated information on Trello
+ - All of sprint 1's task must be labeled different from sprint 2
+ - Moved items from backlog to the to do list with sprint 2 label
+ 
+2) Things to consider when implementing code
+ -`GPS denied
+  -Must keep track of the path of the drone
+ -The drone will be flying on a 2D plane 
+   -no up and down movement (z axis movement)
+   
+3) Discussed what went well and what can be improved
+ -What went well:
+  -slack updates and communication
+  -early requirments documentation delivery
+ -What can be improved:
+  -revision control on the requirments document
+ 
+4) Check out the drone:
+ -Under the name Drew Smegner
+  
+ Action Items:
+ 1) Plan the next skype client meeting
+ 2) Aritecture diagram
+ 3) Get the requirments documentation approved by instructor
+ 4) Create a timeline (who, what, when)
+ 5) Start assigning tasks to members on Trello
+ 
+ ****************************** Studious Umbrella / Team Leidos : Weekly Meeting Agenda ******************************
+Agenda Skype Meeting (10/03) 2PM-3:00PM 
+
+1) 15 minutes: Architecture Diagram, "Ryan"
+2) 15 minutes: connection class for Android studio, "Murat"
+3) 15 minutes: 
+4) 15 minutes: Leidos topics of discussion
+5) 
+
+Invited : Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner.  
+          Leidos Team        - Emily Blocker, James Mccants, Jon Ellsworth. 
+Skype meeting cancelled 
+Attended : NONE
+There was communication between Emily and team on slack
+Questions :
+1) Agenda for next meeting
+
+Notes:
+1) There will be a sprint meeting before the first release
+2) Requirements for release 1:
+   - Final code pushed into master branch
+   - Documentation
+   - Picture/video of software in action
+3) Further and more in detail instructions will be discussed in next meeting
+
+Action Items: 
+1) Get DJI connection working
+2) Improve Aritechture diagram
+3) Discuss next sprint meeting date
+
+
+****************************** Studious Umbrella / Team Leidos : Weekly Meeting Agenda ******************************
+
+Agenda Skype Meeting with Leidos (10/10)
+
+Invited : Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner.  
+          Leidos Team        - Emily Blocker, James Mccants, Jon Ellsworth. 
+
+Agenda:
+* what we did well/what we are not doing well 
+* review architecture DOC
+* Next sprint planning what we need 
+* connection issue DJI SDK
+* how to connect with API
+* LEIDOS review 
+
+
+Action Items/To Do:
+
+* get connected to drone
+* make drone move 
+
+Notes:
+
+* technical difficulties at the beggining of meeting for about 5 minutes due to school internet not working
+* we met with just Emily for Leidos during this meeting 
+* ryan went over his architecture diagram changes while we fixed the technical difficulties
+* need to add tech specs to Trello
+* Emily commented on Tech Specs that we need to add more to release 4
+* We talked about the sample code on github for android studios --  Emily suggested that we may be having difficulties because -
+ * of a a wifi port not being feindly to our connection
+* we asked about the drone wifi settings due to us not being able to find the drone wifi network
+ * response was to reset to factory settings (good idea)
+* we need to upload our connection code to our git 
+* Wed 10/16 at 12 is Leidos meeting 
+* we need to get our signature finalized from Debbie for REQ doc
+* Release 1 can be videos and pictures on slack
+* Release will be on the 22nd or 21st with a little leway for scheduling
+* CI check aka make sure Emily can build and run on her end
+
+****************************** Studious Umbrella / Team Leidos : Weekly Meeting Agenda ******************************
+Agenda: @ Leidos (10/16) 12PM-1PM
+ 
+Invited : Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner.  
+          Leidos Team        - Emily Blocker, James Mccants, Jon Ellsworth. 
+                
+Total Meet time  Minutes.
+ 
+Attended: Senior Design Team - Ryan Vacca, Murat Siyfiyev, Susan Lee, Drew Smegner. 
+          Leidos Team        - Emily Blocker
+
+Agenda: 
+-connection to drone and expectation
+-requirements document
+-technical specifications
+-sprint planning
+-expectation for the end of the semester 
+-json file for flight instructions if we could get a copy of it for future testing. (or how do you make that file)
+- user and config guide explanation 
+- how indepth on config i.e. where to start turn on computer or what
+- include how to set up phone emulator? or assume android device
+- config guide every release 
+- 
+
+Action/To Do Items:
+
+Notes:
+
