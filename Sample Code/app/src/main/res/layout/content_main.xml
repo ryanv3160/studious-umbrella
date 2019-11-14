@@ -56,7 +56,7 @@
         android:nextFocusUp="@id/edittext_bridge_ip"
         android:nextFocusLeft="@id/edittext_bridge_ip"
         android:maxLength="15"
-        android:hint="WSBridge IP"
+        android:hint="LEIDOS"
         android:textAllCaps="false"
         android:maxLines="1"
         android:digits="0123456789.\n"
@@ -73,7 +73,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:background="@drawable/round_btn"
-        android:text="Bluetooth"
+        android:text="UPLOAD MISSION"
         android:textAllCaps="false"
         android:textColor="@color/common_text_color"
         android:textSize="15dp"/>
@@ -86,7 +86,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:background="@drawable/round_btn"
-        android:text="Open"
+        android:text="Connect/Continue"
         android:textAllCaps="false"
         android:textColor="@color/common_text_color"
         android:textSize="15dp"/>
