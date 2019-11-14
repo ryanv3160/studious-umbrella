@@ -85,7 +85,7 @@ public class DemoListView extends FrameLayout {
         ListBuilder builder = new ListBuilder();
 
         //<!-- SUAS 7 controller -->
-        /*
+
         builder.addGroup(R.string.component_listview_sdk_4_9,
                 false,
                 new GroupItem(R.string.component_listview_live_stream, LiveStreamView.class));
@@ -173,7 +173,7 @@ public class DemoListView extends FrameLayout {
                          new GroupItem(R.string.component_listview_mobile_remote_controller,
                                        MobileRemoteControllerView.class));
 
-         */
+
 
         //<!-- SUAS 7 controller -->
         builder.addGroup(R.string.component_listview_SUAS7_controller,

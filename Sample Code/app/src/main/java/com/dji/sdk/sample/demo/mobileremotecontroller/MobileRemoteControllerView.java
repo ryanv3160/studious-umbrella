@@ -39,8 +39,26 @@ import static com.dji.sdk.sample.R.id.btn_take_off;
  * Class for mobile remote controller.
  */
 public class MobileRemoteControllerView extends RelativeLayout
-    implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, PresentableView {
+    implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, PresentableView
+{
+    public MobileRemoteControllerView(Context context) {
+    super(context);
 
+    }
+    public void onClick(View v) {}
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+    }
+    public int getDescription() {
+        return R.string.component_listview_mobile_remote_controller;
+    }
+    @NonNull
+    @Override
+    public String getHint() {
+        return this.getClass().getSimpleName() + ".java";
+    }
+    /*
     private ToggleButton btnSimulator;
     private Button btnTakeOff;
     private Button autoLand;
@@ -89,6 +107,7 @@ public class MobileRemoteControllerView extends RelativeLayout
     }
 
     private void initUI() {
+
         btnTakeOff = (Button) findViewById(btn_take_off);
         autoLand = (Button) findViewById(R.id.btn_auto_land);
         autoLand.setOnClickListener(this);
@@ -157,6 +176,8 @@ public class MobileRemoteControllerView extends RelativeLayout
                     pY = 0;
                 }
 
+                //textView.setText(String.valueOf(Math.abs(pX)));
+                //textView.setText(String.valueOf(Math.abs(pY)));
                 if (mobileRemoteController != null) {
                     mobileRemoteController.setLeftStickHorizontal(pX);
                     mobileRemoteController.setLeftStickVertical(pY);
@@ -175,6 +196,8 @@ public class MobileRemoteControllerView extends RelativeLayout
                 if (Math.abs(pY) < 0.02) {
                     pY = 0;
                 }
+
+                textView.setText(String.valueOf(Math.abs(pX)));
                 if (mobileRemoteController != null) {
                     mobileRemoteController.setRightStickHorizontal(pX);
                     mobileRemoteController.setRightStickVertical(pY);
@@ -267,4 +290,6 @@ public class MobileRemoteControllerView extends RelativeLayout
     public int getDescription() {
         return R.string.component_listview_mobile_remote_controller;
     }
+
+     */
 }
