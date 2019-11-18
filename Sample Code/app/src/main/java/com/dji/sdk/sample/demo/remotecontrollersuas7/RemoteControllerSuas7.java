@@ -92,23 +92,23 @@ public class RemoteControllerSuas7 extends RelativeLayout
     }
 
     /**-------- TURNS : YAW --------**/
-    FlightControls turn_left = new FlightControls(0.0f,0.0f,90.0f, 0.0f, 5000);
-    FlightControls turn_right = new FlightControls(0.0f,0.0f,-90.0f, 0.0f, 5000);
+    FlightControls turn_left = new FlightControls(0.0f,0.0f,90.0f, 0.0f, 1000);
+    FlightControls turn_right = new FlightControls(0.0f,0.0f,-90.0f, 0.0f, 1000);
 
     /**-------- SLIDE : ROLL --------**/
-    FlightControls slide_left = new FlightControls(0.0f,-0.50f,0.0f, 0.0f, 3000);
-    FlightControls slide_right = new FlightControls(0.0f,0.50f,0.0f, 0.0f, 3000);
+    FlightControls slide_left = new FlightControls(0.0f,0.f,0.0f, 0.0f, 3000);
+    FlightControls slide_right = new FlightControls(0.0f,0.0f,0.0f, 0.0f, 3000);
 
     /**-------- FWD/AFT : PITCH --------**/
-    FlightControls fly_forward = new FlightControls(25.0f,0.0f,0.0f, 0.0f, 2000);
+    FlightControls fly_forward = new FlightControls(10.0f,0.0f,0.0f, 0.0f, 10);
     FlightControls fly_backward = new FlightControls(0.0f,0.0f,0.0f, 0.0f, 3000);
 
     /**-------- UP/DWN : THROTTLE --------**/
-    FlightControls fly_up = new FlightControls(0.0f,0.0f,0.0f, 0.50f, 3000);
-    FlightControls fly_down = new FlightControls(0.0f,0.0f,0.0f, -0.50f, 3000);
+    FlightControls fly_up = new FlightControls(0.0f,0.0f,0.0f, 0.0f, 3000);
+    FlightControls fly_down = new FlightControls(0.0f,0.0f,0.0f, 0.0f, 3000);
 
     /**-------- HOVER --------**/
-    FlightControls hover = new FlightControls(0.0f,0.0f,0.0f, -0.01f, 3000);
+    FlightControls hover = new FlightControls(0.0f,0.0f,0.0f, 0.0f, 3000);
 
 
     /*********************************************************************************************************
@@ -333,7 +333,7 @@ public class RemoteControllerSuas7 extends RelativeLayout
         // Get the time when motors start
         takeOffTime = System.currentTimeMillis();
         // Loop and wait until at stable 4 foot hover, roughly 6 seconds, but be safe with 10 seconds
-        while(System.currentTimeMillis() - takeOffTime < 9000)
+        while(System.currentTimeMillis() - takeOffTime < 7000)
         {
         }
 
@@ -342,29 +342,15 @@ public class RemoteControllerSuas7 extends RelativeLayout
         commandComplete = false;
         // Send command
         wrapFlightTask(turn_left);
-        while(commandComplete == false)
+        while(commandComplete == true)
         {
         }
 
-
-        /// Pause
-        long pauseTime3 = System.currentTimeMillis();
-        while(System.currentTimeMillis() - pauseTime3 < 3000)
-        {
-        }
-        // Fly fwd
-        // Initial set command complete for next command
-        commandComplete = false;
-        // Send command
-        wrapFlightTask(fly_forward);
-        while(commandComplete == false)
-        {
-        }
 
 
         /** Pause Inbetween Commands**/
         long pauseTime = System.currentTimeMillis();
-        while(System.currentTimeMillis() - pauseTime < 3000)
+        while(System.currentTimeMillis() - pauseTime < 5000)
         {
         }
 
@@ -372,13 +358,26 @@ public class RemoteControllerSuas7 extends RelativeLayout
         commandComplete = false;
         // Send command
         wrapFlightTask(turn_right);
-        while(commandComplete == false)
+        while(commandComplete == true)
         {
         }
 
+        /// Pause
+        long pauseTime3 = System.currentTimeMillis();
+        while(System.currentTimeMillis() - pauseTime3 < 5000)
+        {
+        }
+        // Fly fwd
+        // Initial set command complete for next command
+        commandComplete = false;
+        // Send command
+        wrapFlightTask(fly_forward);
+        while(commandComplete == true)
+        {
+        }
         /** Pause Inbetween Commands **/
         long pauseTime1 = System.currentTimeMillis();
-        while(System.currentTimeMillis() - pauseTime1 < 3000)
+        while(System.currentTimeMillis() - pauseTime1 < 2000)
         {
         }
 
@@ -428,7 +427,7 @@ public class RemoteControllerSuas7 extends RelativeLayout
         // moving south and north, respectively. Positive and negative roll angle is the angle when
         //the aircraft is moving east and west, respectively. Maximum angle is defined as 30 degrees.
         //Minimum angle is defined as -30 degrees.
-        flightController.setRollPitchControlMode(RollPitchControlMode.VELOCITY); //velocity
+        flightController.setRollPitchControlMode(RollPitchControlMode.ANGLE); //velocity
 
         flightController.setRollPitchCoordinateSystem(FlightCoordinateSystem.GROUND); //ground
 
@@ -525,7 +524,7 @@ public class RemoteControllerSuas7 extends RelativeLayout
                 if (ModuleVerificationUtil.isFlightControllerAvailable())
                 {
                     DJISampleApplication.getAircraftInstance().getFlightController().sendVirtualStickFlightControlData(
-                            new FlightControlData(0.0f, 0.0f, 0.0f, 0.00f),
+                            new FlightControlData(0.0f, 0.0f, 0.0f, 0.0f),
                             new CommonCallbacks.CompletionCallback()
                             {@Override public void onResult(DJIError djiError) {} });
                 }//If
