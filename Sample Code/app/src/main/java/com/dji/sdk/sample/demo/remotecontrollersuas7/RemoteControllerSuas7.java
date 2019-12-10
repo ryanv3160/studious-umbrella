@@ -145,14 +145,18 @@ public class RemoteControllerSuas7 extends RelativeLayout
      * Purpose: When we transition to this page
      * Input: None
      * Returns: Nothing
-     * Notes: None
+     * Notes: Commented out portion reading the forward looking sensor data. This was the intial attempt to read
+     * values from the forward looking sensors, however blocking is occuring here after the intitial value read.
+     * every value checked afterwards is stale. It is only stale when we start sending the drone commands to move.
+     * prior to sending any commands to the drone this will update the screen with accurate distance sensor data.
+     * TODO : Figure out blocking issue, Figure out trigger based on 2 meter threshold.
      *********************************************************************************************************/
     @Override
     protected void onAttachedToWindow()
     {
+        // Super class constructor
         super.onAttachedToWindow();
 /*
-
         if (ModuleVerificationUtil.isFlightControllerAvailable())
         {
             FlightController flightController = ((Aircraft) DJISampleApplication.getProductInstance()).getFlightController();
@@ -215,6 +219,7 @@ public class RemoteControllerSuas7 extends RelativeLayout
 
         super.onDetachedFromWindow();
 
+        // This works with the distance sensors.
 /*
 
         if (ModuleVerificationUtil.isFlightControllerAvailable())
@@ -224,9 +229,7 @@ public class RemoteControllerSuas7 extends RelativeLayout
                 intelligentFlightAssistant.setVisionDetectionStateUpdatedCallback(null);
             }
         }
-
  */
-
     }
 
 
@@ -289,10 +292,18 @@ public class RemoteControllerSuas7 extends RelativeLayout
         switch (v.getId())
         {
             // Take off button was pressed
+            // Also considered the start mission.
             case R.id.btn_take_off:
 
-                /** Start Test 1 : Take-Off, Pause, Turn Left, Pause, Turn Right, Pause, Land **/
-                test1(flightController);
+                /**---------------------------------------**/
+                /** Here start calling test cases created **/
+                /**---------------------------------------**/
+                //test1(flightController); //Pass
+                //test2(flightController); //Pass
+                //test3(flightController); //Pass
+                //test4(flightController); //Pass
+                test5(flightController);   //Pass
+
 
                 // Land button was pressed
             case R.id.btn_auto_land:
@@ -320,11 +331,32 @@ public class RemoteControllerSuas7 extends RelativeLayout
     }
 
 
-
     /*********************************************************************************************************
      * ------------------------------------------ T E S T 1 ------------------------------------------------ *
+     * Take off , hover 5 seconds, land
      *********************************************************************************************************/
     public void test1(FlightController flightController)
+    {
+        /** Start Take-off Sequence **/
+        takeOff(flightController);
+
+        /** Set Pause for take-off **/
+        // Get the time when motors start
+        takeOffTime = System.currentTimeMillis();
+        // Loop and wait until at stable 4 foot hover, roughly 6 seconds, but be safe with 10 seconds
+        while(System.currentTimeMillis() - takeOffTime < 7000)
+        {
+        }
+
+        /** End Test Land the drone **/
+        land(flightController);
+    }
+
+    /*********************************************************************************************************
+     * ------------------------------------------ T E S T 2 ------------------------------------------------ *
+     * Take off , hover 5 seconds, turn left 90, hover 5 seconds, land
+     *********************************************************************************************************/
+    public void test2(FlightController flightController)
     {
         /** Start Take-off Sequence **/
         takeOff(flightController);
@@ -346,8 +378,80 @@ public class RemoteControllerSuas7 extends RelativeLayout
         {
         }
 
+        /** Pause Inbetween Commands**/
+        // 5 second pause
+        long pauseTime = System.currentTimeMillis();
+        while(System.currentTimeMillis() - pauseTime < 5000)
+        {
+        }
+
+        /** End Test Land the drone **/
+        land(flightController);
+    }
+
+    /*********************************************************************************************************
+     * ------------------------------------------ T E S T 3 ------------------------------------------------ *
+     * Take off , hover 5 seconds, turn right 90, hover 5 seconds, land
+     *********************************************************************************************************/
+    public void test3(FlightController flightController)
+    {
+        /** Start Take-off Sequence **/
+        takeOff(flightController);
+
+        /** Set Pause for take-off **/
+        // Get the time when motors start
+        takeOffTime = System.currentTimeMillis();
+        // Loop and wait until at stable 4 foot hover, roughly 6 seconds, but be safe with 10 seconds
+        while(System.currentTimeMillis() - takeOffTime < 7000)
+        {
+        }
+
+        /** Setup up for right turn **/
+        // Initial set command complete for next command
+        commandComplete = false;
+        // Send command
+        wrapFlightTask(turn_right);
+        while(commandComplete == true)
+        {
+        }
+
+        /** Pause Inbetween Commands**/
+        // 5 second pause
+        long pauseTime = System.currentTimeMillis();
+        while(System.currentTimeMillis() - pauseTime < 5000)
+        {
+        }
+
+        /** End Test Land the drone **/
+        land(flightController);
+    }
 
 
+    /*********************************************************************************************************
+     * ------------------------------------------ T E S T 4 ------------------------------------------------ *
+     * Take off , hover 5 seconds, turn left 90, hover 5 seconds, turn right 90, hover 5 seconds, land
+     *********************************************************************************************************/
+    public void test4(FlightController flightController)
+    {
+        /** Start Take-off Sequence **/
+        takeOff(flightController);
+
+        /** Set Pause for take-off **/
+        // Get the time when motors start
+        takeOffTime = System.currentTimeMillis();
+        // Loop and wait until at stable 4 foot hover, roughly 6 seconds, but be safe with 10 seconds
+        while(System.currentTimeMillis() - takeOffTime < 7000)
+        {
+        }
+
+        /** Setup up for left turn **/
+        // Initial set command complete for next command
+        commandComplete = false;
+        // Send command
+        wrapFlightTask(turn_left);
+        while(commandComplete == true)
+        {
+        }
         /** Pause Inbetween Commands**/
         long pauseTime = System.currentTimeMillis();
         while(System.currentTimeMillis() - pauseTime < 5000)
@@ -361,13 +465,13 @@ public class RemoteControllerSuas7 extends RelativeLayout
         while(commandComplete == true)
         {
         }
-
-        /// Pause
-        long pauseTime3 = System.currentTimeMillis();
-        while(System.currentTimeMillis() - pauseTime3 < 5000)
+        /** Pause Inbetween Commands**/
+        pauseTime = System.currentTimeMillis();
+        while(System.currentTimeMillis() - pauseTime < 5000)
         {
         }
-        // Fly fwd
+
+        /** Setup for fly forward **/
         // Initial set command complete for next command
         commandComplete = false;
         // Send command
@@ -375,9 +479,72 @@ public class RemoteControllerSuas7 extends RelativeLayout
         while(commandComplete == true)
         {
         }
-        /** Pause Inbetween Commands **/
-        long pauseTime1 = System.currentTimeMillis();
-        while(System.currentTimeMillis() - pauseTime1 < 2000)
+        /** Pause Inbetween Commands**/
+        pauseTime = System.currentTimeMillis();
+        while(System.currentTimeMillis() - pauseTime < 2000)
+        {
+        }
+
+        /** End Test Land the drone **/
+        land(flightController);
+    }
+
+    /*********************************************************************************************************
+     * ------------------------------------------ T E S T 5 ------------------------------------------------ *
+     * Take off , hover 5 seconds, turn left 90, hover 5 seconds, turn right 90, hover 5 seconds,
+     * fly fwd 5 meters, hover 5 seconds, land
+     *********************************************************************************************************/
+    public void test5(FlightController flightController)
+    {
+        /** Start Take-off Sequence **/
+        takeOff(flightController);
+
+        /** Set Pause for take-off **/
+        // Get the time when motors start
+        takeOffTime = System.currentTimeMillis();
+        // Loop and wait until at stable 4 foot hover, roughly 6 seconds, but be safe with 10 seconds
+        while(System.currentTimeMillis() - takeOffTime < 7000)
+        {
+        }
+
+        /** Setup up for left turn **/
+        // Initial set command complete for next command
+        commandComplete = false;
+        // Send command
+        wrapFlightTask(turn_left);
+        while(commandComplete == true)
+        {
+        }
+        /** Pause Inbetween Commands**/
+        long pauseTime = System.currentTimeMillis();
+        while(System.currentTimeMillis() - pauseTime < 5000)
+        {
+        }
+
+        /** Setup for right turn **/
+        commandComplete = false;
+        // Send command
+        wrapFlightTask(turn_right);
+        while(commandComplete == true)
+        {
+        }
+        /** Pause Inbetween Commands**/
+        pauseTime = System.currentTimeMillis();
+        while(System.currentTimeMillis() - pauseTime < 5000)
+        {
+        }
+
+        /** Setup for fly forward **/
+        // Initial set command complete for next command
+        commandComplete = false;
+        // Send command
+        wrapFlightTask(fly_forward);
+        while(commandComplete == true)
+        {
+        }
+        /** Pause Inbetween Commands**/
+        pauseTime = System.currentTimeMillis();
+        while(System.currentTimeMillis() - pauseTime < 2000)
         {
         }
 
@@ -498,8 +665,9 @@ public class RemoteControllerSuas7 extends RelativeLayout
 
     /*********************************************************************************************************
      * Name: SendVirtualStickDataTask Class
-     * Purpose:
-     * Input:
+     * Purpose: This is the function that will schedule the pitch, roll, thrust, yaw commands to be sent to
+     * the firmware on the drone from the mobile application.
+     * Input: 
      * Returns: Nothing
      * Notes:
      *********************************************************************************************************/
