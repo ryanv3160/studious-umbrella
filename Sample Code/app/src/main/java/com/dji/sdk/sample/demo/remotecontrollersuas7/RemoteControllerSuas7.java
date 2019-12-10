@@ -667,13 +667,15 @@ public class RemoteControllerSuas7 extends RelativeLayout
      * Name: SendVirtualStickDataTask Class
      * Purpose: This is the function that will schedule the pitch, roll, thrust, yaw commands to be sent to
      * the firmware on the drone from the mobile application.
-     * Input: 
+     * Input:
      * Returns: Nothing
      * Notes:
      *********************************************************************************************************/
     private class SendVirtualStickDataTask extends TimerTask
     {
+        // Create a local flight controls object, did not work as private in class
         private FlightControls flight_controls;
+        // The time when command is first sent
         private long startTime;
 
         // Class constructor
@@ -681,14 +683,17 @@ public class RemoteControllerSuas7 extends RelativeLayout
         {
             this.flight_controls = flight_controls;
             this.startTime = System.currentTimeMillis();
+            this.run();
         }
 
+        // Runnable java function to execute orientation command
         @Override
         public void run()
         {
             // If delay has expired
             if (System.currentTimeMillis() - this.startTime > flight_controls.milliSecondDelay)
             {
+                // Null all 4 values
                 if (ModuleVerificationUtil.isFlightControllerAvailable())
                 {
                     DJISampleApplication.getAircraftInstance().getFlightController().sendVirtualStickFlightControlData(
@@ -701,6 +706,7 @@ public class RemoteControllerSuas7 extends RelativeLayout
             // Continue direction of flight
             else
             {
+                // Can we reach the drone itself, as in have a valid instance of the virtual stick
                 if (ModuleVerificationUtil.isFlightControllerAvailable())
                 {
                     DJISampleApplication.getAircraftInstance().getFlightController().sendVirtualStickFlightControlData(
